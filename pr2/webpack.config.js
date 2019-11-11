@@ -4,17 +4,19 @@ const path = require("path");
 module.exports = {
     context: path.join(__dirname, "src"),
     entry: {
-        subApp: './subApp.jsx'
+        subApp: './index.js'
     },
     output: {
         path: path.join(__dirname, "dist"),
-        filename: "[name]-[hash].js",
-        publicPath: "/"
+        filename: "[name].js",
+        publicPath: "/",
+        library: 'SubApp',
+        libraryTarget: "commonjs"
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.jsx$/,
                 use: ["babel-loader"],
             },
         ]
