@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 
 import { asyncComponent } from './asyncComponent.jsx';
 

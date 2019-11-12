@@ -2,8 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 
 module.exports = {
-    context: path.join(__dirname, "src"),
-    entry: './index.jsx',
+    context: path.join(__dirname),
+    entry: ['./polyfills/import.js', './src/index.jsx'],
     output: {
         path: path.join(__dirname, "dist"),
         filename: "[name]-[hash].js",
@@ -18,7 +18,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./index.html"
+            template: "./src/index.html"
         })
     ]
 };
