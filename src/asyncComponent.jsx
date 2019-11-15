@@ -8,7 +8,10 @@ export function asyncComponent({prefix, loadManifest}) {
         componentDidMount() {
             if (!this.state.Component) {
                 loadManifest().then(manifest => {
-                    return window.import(/* webpackIgnore: true */`http://localhost:8080/${prefix}${manifest['subApp.js']}`)
+                    if(window.__import__) {
+                        console.log(window.__import__)
+                    }
+                    return import(/* webpackIgnore: true */`http://localhost:8080/${prefix}${manifest['subApp.js']}`)
                 }).then(module => {
                     this.setState({
                         Component: module.SubApp.default

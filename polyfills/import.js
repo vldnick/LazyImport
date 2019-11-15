@@ -1,5 +1,5 @@
-import { importModule } from '@uupaa/dynamic-import-polyfill';
+import dynamicImportPolyfill from 'dynamic-import-polyfill';
 
-if (!window.import) {
-    window.import = importModule
-}
+dynamicImportPolyfill.initialize({
+    // modulePath: '/public', // Defaults to '.'
+});

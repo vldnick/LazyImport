@@ -3,6 +3,8 @@ import { render } from 'react-dom';
 
 import { asyncComponent } from './asyncComponent.jsx';
 
+global.React = React
+
 const LazyComponent = asyncComponent({
     prefix: 'pr2/dist',
     loadManifest: () =>
